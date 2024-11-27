@@ -65,7 +65,7 @@ public class Anagram {
 	public static String preProcess(String str) {
 		// Replace the following statement with your code
 		str = str.toLowerCase();
-		String smallCharr = "abcdefghijklmnopqrstuvwxyz";
+		String smallCharr = "abcdefghijklmnopqrstuvwxyz ";
 		String newString = "";
 
 			for (int i = 0; i<str.length() ; i++) {
