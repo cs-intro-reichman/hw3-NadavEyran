@@ -28,6 +28,22 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
+	    String strClen1 = "";
+	    for (int i = 0; i < str1.length(); i++) {
+	        if (str1.charAt(i) != ' ') {
+	            strClen1 += str1.charAt(i);
+	        }
+	    }
+	    str1 = strClen1;
+
+	    String strClen2 = "";
+	    for (int i = 0; i < str2.length(); i++) {
+	        if (str2.charAt(i) != ' ') {
+	            strClen2 += str2.charAt(i);
+	        }
+	    }
+	    str2 = strClen2;
+
 	    str1 = preProcess(str1);
 	    str2 = preProcess(str2);
 
@@ -37,24 +53,16 @@ public class Anagram {
 
 	    for (int i = 0; i < str1.length(); i++) {
 	        char c = str1.charAt(i);
-	        int count1 = 0;
-	        int count2 = 0;
+	        int count1 = 0, count2 = 0;
 
 	        for (int j = 0; j < str1.length(); j++) {
-	            if (str1.charAt(j) == c) {
-	                count1++;
-	            }
+	            if (str1.charAt(j) == c) count1++;
 	        }
-
 	        for (int j = 0; j < str2.length(); j++) {
-	            if (str2.charAt(j) == c) {
-	                count2++;
-	            }
+	            if (str2.charAt(j) == c) count2++;
 	        }
 
-	        if (count1 != count2) {
-	            return false;
-	        }
+	        if (count1 != count2) return false;
 	    }
 
 	    return true;
@@ -93,3 +101,4 @@ public class Anagram {
 	    return result;
 	}
 }
+
